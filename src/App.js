@@ -9,13 +9,16 @@ function App() {
     fetch("http://localhost:3001/solutions")
       .then((res) => res.json())
       .then((json) => {
-        console.log(json);
+        // generate random int between 0 & 14 to grab array position
+        const randomSolution = json[Math.floor(Math.random() * json.length)];
+        setSolution(randomSolution.word);
       });
-  }, []);
+  }, [setSolution]);
 
   return (
     <div className="App">
       <h1>Wordle (Lingo)</h1>
+      {solution && <div>Solution is : {solution}</div>}
     </div>
   );
 }
