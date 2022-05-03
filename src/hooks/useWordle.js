@@ -3,8 +3,12 @@ import { useState } from "react";
 const useWordle = (solution) => {
   const [turn, setTurn] = useState(0);
   const [currentGuess, setCurrentGuess] = useState("");
-  const [guesses, setGuesses] = useState([]); // each guess is an array
-  const [history, setHistory] = useState([]); // each guess is a string
+  // each guess is an array
+  const [guesses, setGuesses] = useState([]);
+  // help us deal with duplicate guesses
+  // each guess is a string
+  const [history, setHistory] = useState([]);
+  // turns true when user wins game
   const [isCorrect, setIsCorrect] = useState(false);
 
   // format a guess into an array of letter objects
@@ -20,6 +24,8 @@ const useWordle = (solution) => {
   // handle keyup event & tract current guess
   // if user presses enter, add the new guess
   const handleKeyup = () => {};
+
+  return { turn, currentGuess, guesses, isCorrect, handleKeyup };
 };
 
 export default useWordle;
