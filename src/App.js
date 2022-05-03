@@ -1,4 +1,14 @@
+import { useEffect, useState } from "react";
+
 function App() {
+  const [solution, setSolution] = useState(null);
+
+  // data can be accessed via json-server
+  // npm run jserve
+  useEffect(() => {
+    fetch("http://localhost:3001/solutions");
+  }, []);
+
   return (
     <div className="App">
       <h1>Wordle (Lingo)</h1>
