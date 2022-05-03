@@ -24,7 +24,16 @@ const useWordle = (solution) => {
   // handle keyup event & tract current guess
   // if user presses enter, add the new guess
   const handleKeyup = ({ key }) => {
-    console.log(key);
+    if (key === "Backspace") {
+      setCurrentGuess((prev) => prev.slice(0, -1));
+      return;
+    }
+    if (/^[A-Za-z]$/.test(key)) {
+      // 5 max length of the word
+      if (currentGuess.length < 5) {
+        setCurrentGuess((prev) => prev + key);
+      }
+    }
   };
 
   return { turn, currentGuess, guesses, isCorrect, handleKeyup };
