@@ -14,7 +14,9 @@ const useWordle = (solution) => {
   // format a guess into an array of letter objects
   // eg [{key: 'a', color: 'yellow'}]
 
-  const formatGuess = () => {};
+  const formatGuess = () => {
+    console.log("Formatting the guess - ", currentGuess);
+  };
 
   // add a new guess to the guesses state
   // update the isCorrect state if the guess is correct
@@ -40,6 +42,8 @@ const useWordle = (solution) => {
         console.log("Guess must be 5 letters");
         return;
       }
+
+      formatGuess();
     }
 
     if (key === "Backspace") {
