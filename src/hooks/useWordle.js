@@ -67,6 +67,7 @@ const useWordle = (solution) => {
       }
 
       const formatteed = formatGuess();
+      console.log(formatteed);
     }
 
     if (key === "Backspace") {
@@ -80,7 +81,6 @@ const useWordle = (solution) => {
       }
     }
   };
-
   return { turn, currentGuess, guesses, isCorrect, handleKeyup };
 };
 
