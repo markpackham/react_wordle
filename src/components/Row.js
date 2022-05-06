@@ -5,7 +5,9 @@ export default function Row({ guess }) {
     return (
       <div className="row past">
         {guess.map((letter, i) => {
-          <div key={i}>{letter.key}</div>;
+          <div key={i} className={letter.color}>
+            {letter.key}
+          </div>;
         })}
       </div>
     );
