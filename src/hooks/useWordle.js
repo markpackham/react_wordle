@@ -32,7 +32,7 @@ const useWordle = (solution) => {
     // find any yellow letters
     formattedGuess.forEach((letter, i) => {
       // not only check if letter exists but forbid it from effecting green ones
-      if (solutionArray.includes(letter.key) && letter.color != "green") {
+      if (solutionArray.includes(letter.key) && letter.color !== "green") {
         formattedGuess[i].color = "yellow";
         solutionArray[solutionArray.indexOf(letter.key)] = null;
       }
