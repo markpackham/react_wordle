@@ -58,7 +58,7 @@ const useWordle = (solution) => {
       return [...prevHistory, currentGuess];
     });
     setTurn((prevTurn) => {
-      return prevTurn++;
+      return prevTurn + 1;
     });
     setCurrentGuess("");
   };
