@@ -83,8 +83,8 @@ const useWordle = (solution) => {
         return;
       }
 
-      const formatteed = formatGuess();
-      addNewGuess(formatteed);
+      const formatted = formatGuess();
+      addNewGuess(formatted);
     }
 
     if (key === "Backspace") {
