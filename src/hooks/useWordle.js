@@ -54,6 +54,13 @@ const useWordle = (solution) => {
       newGuesses[turn] = formattedGuess;
       return newGuesses;
     });
+    setHistory((prevHistory) => {
+      return [...prevHistory, currentGuess];
+    });
+    setTurn((prevTurn) => {
+      return prevTurn++;
+    });
+    setCurrentGuess("");
   };
 
   // handle keyup event & tract current guess
