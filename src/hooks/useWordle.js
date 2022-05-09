@@ -19,7 +19,7 @@ const useWordle = (solution) => {
   const formatGuess = () => {
     let solutionArray = [...solution];
     let formattedGuess = [...currentGuess].map((letter) => {
-      return { key: letter, color: "grey" };
+      return { key: letter.toLowerCase(), color: "grey" };
     });
 
     // find any green letters
