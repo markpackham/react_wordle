@@ -77,7 +77,18 @@ const useWordle = (solution) => {
           newKeys[letter.key] = "yellow";
           return;
         }
+
+        if (
+          letter.color === "grey" &&
+          currentColor !== "green" &&
+          currentColor !== "yellow"
+        ) {
+          newKeys[letter.key] = "grey";
+          return;
+        }
       });
+
+      return newKeys;
     });
     setCurrentGuess("");
   };
