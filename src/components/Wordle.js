@@ -10,8 +10,11 @@ export default function Wordle({ solution }) {
   useEffect(() => {
     window.addEventListener("keyup", handleKeyup);
 
+    if (isCorrect) {
+    }
+
     return () => window.removeEventListener("keyup", handleKeyup);
-  }, [handleKeyup]);
+  }, [handleKeyup, isCorrect]);
 
   return (
     <>
