@@ -47,7 +47,7 @@ const useWordle = (solution) => {
   // update the isCorrect state if the guess is correct
   // add one to the turn state
   const addNewGuess = (formattedGuess) => {
-    if (currentGuess === solution) {
+    if (currentGuess.toLowerCase() === solution) {
       // user won game
       setIsCorrect(true);
     }
