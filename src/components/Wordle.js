@@ -13,10 +13,6 @@ export default function Wordle({ solution }) {
     return () => window.removeEventListener("keyup", handleKeyup);
   }, [handleKeyup]);
 
-  useEffect(() => {
-    console.log(guesses, turn, isCorrect);
-  }, [guesses, turn, isCorrect]);
-
   return (
     <>
       <div>solution - {solution}</div>
