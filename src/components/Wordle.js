@@ -11,10 +11,17 @@ export default function Wordle({ solution }) {
     window.addEventListener("keyup", handleKeyup);
 
     if (isCorrect) {
+      console.log("Congratulations you won!");
+      window.removeEventListener("keyup", handleKeyup);
+    }
+
+    if (turn > 5) {
+      console.log("Out of turns you lost!");
+      window.removeEventListener("keyup", handleKeyup);
     }
 
     return () => window.removeEventListener("keyup", handleKeyup);
-  }, [handleKeyup, isCorrect]);
+  }, [handleKeyup, isCorrect, turn]);
 
   return (
     <>
